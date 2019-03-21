@@ -118,19 +118,19 @@ The pagination links will only be included if they are relevant (eg. there will 
 ## Filtering results
 Some resources allow the results to be filtered. This will be documented with the resource if it is available.
 
-###DateTime Filter Operators
+### DateTime Filter Operators
 
-- >= Greater than or equal to
-- > Greater than
-- <= Less than or equal to
-- < Less than
+- `>=` Greater than or equal to
+- `>` Greater than
+- `<=` Less than or equal to
+- `<` Less than
 
-###Sending Filter Parameters
+### Sending Filter Parameters
 To filter a resource, send a filter string as the q parameter:
 
 `https://au.instinctivenotes.com/api/v2/soap_notes?q=updated_at:>2019-01-29T11:59:59Z`
 
-###Example request (greater than)
+### Example request (greater than)
 
 ```
 curl https://au.instinctivenotes.com/api/v2/soap_notes?q=updated_at:>2019-01-29T11:59:59Z \
@@ -139,21 +139,21 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes?q=updated_at:>2019-01-29T
   -H 'User-Agent: APP_VENDOR_NAME (APP_VENDOR_EMAIL)'
 ```
 
-###Format rules
+### Format rules
 Dates and datetimes must be sent in UTC time_zone and sent as iso8601
 
 Eg: `2019-01-29T11:59:59Z`
 
-###Filtering tips
+### Filtering tips
 For index endpoints you can get records that have been updated since a certain time by sending a filter for updated_at
 
 Eg: `q=updated_at:>2019-01-29T11:59:59Z`
 
 This is highly recommended to reduce the number of calls and data returned.
 
-##API Resources
+## API Resources
 
 - SOAP Notes
 
-##Questions
+## Questions
 If you have any questions send us an email to info@instinctivenotes.com
