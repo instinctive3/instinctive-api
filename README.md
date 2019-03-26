@@ -153,7 +153,7 @@ This is highly recommended to reduce the number of calls and data returned.
 
 ## API Resources
 
-- SOAP Notes
+- [SOAP Notes](/resources/soap_notes.md)
 
 ## Questions
 If you have any questions send us an email to info@instinctivenotes.com
