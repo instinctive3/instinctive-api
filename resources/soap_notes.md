@@ -23,13 +23,13 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes \
 {
   "soap_notes": [
     {
-      "client_id": 50,
       "client_external_ref": "123456",
+      "client_id": 50,
       "created_by": "Simon Jones",
-      "exercises": [
+      "exercise_prescriptions": [
         {
-          "exercise_master_id": 33,
-          "exercise_master_external_ref": "444555",
+          "exercise_external_ref": "444555",
+          "exercise_id": 33,
           "hold_for": "20 seconds",
           "id": 1735,
           "instructions": "No bouncing",
@@ -42,8 +42,8 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes \
           "tools": "Foam roller",
         },
         {
-          "exercise_master_id": 75,
-          "exercise_master_external_ref": "776655",
+          "exercise_external_ref": "776655",
+          "exercise_id": 75,
           "hold_for": "2 seconds",
           "id": 1973,
           "instructions": "",
@@ -58,16 +58,16 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes \
       ],
       "id": 10,
       "name": "Standard Treatment",
-      "products": [
+      "product_prescriptions": [
         {
-          "external_ref": "123456",
-          "id": 35,
           "name": "Complete Sleeprrr Pillow",
+          "product_external_ref": "123456",
+          "product_id": 35,
         },
         {
-          "external_ref": "987654",
-          "id": 275,
           "name": "Flex-Heat Lupin Pack",
+          "product_external_ref": "987654",
+          "product_id": 275,
         }
       ],
       "recommendations": "Get more sleep, Elevate injury, Weight bearing exercise",
