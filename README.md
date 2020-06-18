@@ -199,7 +199,8 @@ Some resources allow the results to be filtered. Filter fields will be documente
 
 The filter string format is `[FIELDNAME]:[OPERATOR][VALUE]`
 
-The integer and string `=` and `!=` operators also accepts a list of entries in the format: `[FIELDNAME]:=[VALUE],[VALUE],[VALUE],[VALUE]`. For example, practitioner_id:=1,2,3
+The integer and string `=` and `!=` operators also accepts a list of entries in the format:
+`[FIELDNAME]:=[VALUE],[VALUE],[VALUE],[VALUE]`. For example, practitioner_id:=1,2,3
 
 ### Sending Filter Parameters
 

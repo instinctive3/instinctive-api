@@ -2,7 +2,6 @@
 
 - [Get Soap Notes](#get-soap-notes)
 - [Get Soap Note](#get-soap-note)
-
 - [Important Fields](#important-fields)
 - [Filtering Soap Notes](#filtering-soap-notes)
 

@@ -1,6 +1,6 @@
 # Receieve event notifications with webhooks
 
-## Listen to events on your Instinctive Notes account so your integration can automatically trigger reactions.
+**Listen to events on your Instinctive Notes account so your integration can automatically trigger reactions.**
 
 Instinctive Notes uses webhooks to notify your application when an event happens in your account. Webhooks are particularly useful in avoiding making calls to the API where no updates exist. Instead when an update is available your application will be notified automatically.
 
