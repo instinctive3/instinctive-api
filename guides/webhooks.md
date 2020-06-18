@@ -14,7 +14,7 @@ Begin using webhooks with you Instinctive Notes integration in just three steps:
 
 A webhook is the notification of activity in your Instinctive Notes account. The activity could be triggered by the creation or a new soap note, or any other supported event.
 
-A webhook endpoint is code on your server which receives the webhook and takes action based on the specific information it contains. The webhook endpoint has an associated URL (eg httpe://example.com/webhooks).
+A webhook endpoint is code on your server which receives the webhook and takes action based on the specific information it contains. The webhook endpoint has an associated URL (eg https://example.com/webhooks).
 
 Each webhook contains an Event object. This Event object contains all the relevant information about what just happened, including the type of event and the data associated with that event
 
@@ -30,25 +30,25 @@ The first step to adding webhooks to your Instinctive Notes integration is to bu
 
 ### Accept POST requests
 
-For each event occurrence, Instinctive Notes POSTs the webhook data to your endpoint in JSON format. The full event details are included and can be used directly after parsing the JSON into an Event object.
+For each event occurrence, Instinctive Notes `POST`s the webhook data to your endpoint in JSON format. The full event details are included and can be used directly after parsing the JSON.
 
 ### Return a 2xx status code quickly
 
-To acknowledge receipt of an event, your endpoint must return a 2xx HTTP status code to Instinctive Notes. All response codes outside this range, including 3xx codes, indicate to Instinctive Notes that you did not receive the event.
+To acknowledge receipt of an event, your endpoint must return a `2xx` HTTP status code to Instinctive Notes. All status codes outside this range, including `3xx` codes, indicate to Instinctive Notes that you did not receive the event.
 
-If Instinctive Notes does not receive a 2xx HTTP status code, the notification attempt is repeated. After multiple failures to send the notification over 12 hours, Instinctive Notes marks the event as failed and stops trying to send it to your endpoint. At this point Instinctive Notes emails you about the misconfigured endpoint, and automatically disables your endpoint soon after if unaddressed.
+If Instinctive Notes does not receive a `2xx` HTTP status code, the notification attempt is repeated. After multiple failures to send the notification over 12 hours, Instinctive Notes marks the event as failed and stops trying to send it to your endpoint. At this point Instinctive Notes emails you about the misconfigured endpoint, and automatically disables your endpoint soon after if unaddressed.
 
-Because properly acknowledging receipt of the webhook notification is so important, your endpoint should return a 2xx HTTP status code prior to any complex logic could cause a timeout.
+Because properly acknowledging receipt of the webhook notification is so important, your endpoint should return a `2xx` HTTP status code prior to any complex logic could cause a timeout.
 
 ### Set up a webhook endpoint
 
-First add an endpoint in the Instinctive Notes Web App under "Settings >> Change developers settings".
+First add an endpoint in the Instinctive Notes Web App under `Settings >> Change developers settings`.
 
 For security and privacy of your patients data you must be an `Owner` in order to set up and test webhooks.
 
 You must provide an email address where we can contact you in case a webhook is failing to be received by your integration.
 
-All new endpoints default to "Inactive" status to allow time to build and test your endpoints.
+All new endpoints default to `Inactive` status to allow time to build and test your endpoints.
 
 ### Test that your endpoint works
 
@@ -58,15 +58,15 @@ As your webhook endpoint is used asynchronously, its failures may not be obvious
 - After taking it live
 - After making any changes
 
-You can send test webhooks to your endpoint from the Instinctive Notes Web App under "Settings >> Change developers settings" using the "Send test" link.
+You can send test webhooks to your endpoint from the Instinctive Notes Web App under `Settings >> Change developers settings` using the `Send test` link.
 
 You can select any event type to send, even if the endpoint is not currently subscribed to that event type. Instinctive Notes will send an event of that type to your endpoint using the last saved document of that type.
 
-For example, if you choose "soap_note.created" then the last soap note created in your account will be sent as a webhook.
+For example, if you choose `soap_note.created` then the last soap note created in your account will be sent as a webhook.
 
 ## Webhook response
 
-A webhook response is in json. The "data >> object" key will include the specific object record.
+A webhook response is in `JSON`. The `data: object:` key will include the specific object record.
 
 The object record will be the same as the singular response in the section for that specific data type.
 
@@ -139,12 +139,12 @@ Here is an example response for a soap note.
 
 Instinctive Notes currently supports the following webhooks:
 
-- soap_note.created
-- soap_note.updated
+- `soap_note.created`
+- `soap_note.updated`
 
-## Supported Records
+## Supported Resources
 
-- [SOAP Notes](/resources/soap_notes.md)
+- [SOAP Notes](/resources/soap_notes.md#get-soap-note)
 
 ## Best practices for using webhooks
 

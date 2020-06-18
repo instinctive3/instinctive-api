@@ -14,8 +14,6 @@ HTTP is not supported and will be redirected to HTTPS automatically.
 
 Ensure that the HTTP client is up-to-date and has the latest TLS, cipher suites and SNI available.
 
-From late 2020 requests to the Instinctive Notes API will require TLS 1.2.
-
 ## Base URL
 
 The base URL should preceed any endpoint calls made to the API.
