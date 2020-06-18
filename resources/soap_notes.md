@@ -78,6 +78,7 @@ curl https://au1.instinctivenotes.com/api/v2/soap_notes \
       "seen_at": "2018-03-26T14:15:00Z",
       "state": "final",
       "updated_at": "2018-03-26T14:18:00Z",
+      "user_external_ref": "98765",
       "user_id": 5
     }
   ]
@@ -155,19 +156,20 @@ curl https://au1.instinctivenotes.com/api/v2/soap_notes/10 \
   "seen_at": "2018-03-26T14:15:00Z",
   "state": "final",
   "updated_at": "2018-03-26T14:18:00Z",
+  "user_external_ref": "98765",
   "user_id": 5
 }
 ```
 
 ## Important Fields
 
-`client_external_ref` - The id or reference number for a patient or client from the connected practice management system (Cliniko, Nookal, Mindbody)
+`client_external_ref` - The ID or reference number for a patient or client from the connected practice management system (Cliniko, Nookal, Mindbody)
 
 `seen_at` - The start time for the appointment this soap note was recorded from
 
 `state` - A soap note can either be in `draft` or `final` state
 
-`user_external_ref` - The id or reference number for the practitioner who recorded the Soap Note.
+`user_external_ref` - The ID or reference number for the practitioner who recorded the Soap Note.
 - For Cliniko this is the User ID
 - For Mindbody this is the Staff ID
 - For Nookal this is the Practitioner ID
