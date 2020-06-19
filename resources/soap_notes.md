@@ -15,9 +15,8 @@
 
 ```
 curl https://au1.instinctivenotes.com/api/v2/soap_notes \
-  -H 'Authorization: Token token="API_KEY"' \
+  -H 'Authorization: Token token="API_KEY-SHARD", app="APP_NAME' \
   -H 'Accept: application/json' \
-  -H 'User-Agent: APP_VENDOR_NAME (APP_VENDOR_EMAIL)'
 ```
 
 ### Example Response
@@ -95,9 +94,8 @@ curl https://au1.instinctivenotes.com/api/v2/soap_notes \
 
 ```
 curl https://au1.instinctivenotes.com/api/v2/soap_notes/10 \
-  -H 'Authorization: Token token="API_KEY"' \
+  -H 'Authorization: Token token="API_KEY-SHARD", app="APP_NAME' \
   -H 'Accept: application/json' \
-  -H 'User-Agent: APP_VENDOR_NAME (APP_VENDOR_EMAIL)'
 ```
 
 ### Example Response
@@ -173,6 +171,7 @@ curl https://au1.instinctivenotes.com/api/v2/soap_notes/10 \
 - For Cliniko this is the User ID
 - For Mindbody this is the Staff ID
 - For Nookal this is the Practitioner ID
+- For FrontDesk, where there is no external ID, this is set to the Instinctive Notes User ID
 
 In exercise_presecriptions
 

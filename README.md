@@ -67,31 +67,38 @@ Eg: `ABsUn1ggcLazRmRXYXYgQrnc-au1`
 
 The full API Key, including the dash and the shard, should be sent with any request. See the `Authentication` section below for how to send the API Key.
 
-While the API is in Beta please send requests for API Keys to info@instinctive3.com and we will be in touch to discuss what you are looking to do with the API.
+
+## Identifying your application
+
+You must register your application or service name with Instinctive Notes to have access to the API. This is to ensure we know who is accessing the API and who to contact if there is an issue.
+
+To register please send an email to info@instinctive3.com and include:
+
+- Your app/service name - all lower case with underscores for spaces
+- An email contact in case we need to get in touch with something
+- A one liner on what the app/service is going to do
+
+We will let you know when your app is registered and you can access the API.
 
 ## Authentication
 
 The Instinctive Notes API uses Token authentication in the HTTP Authorization header. This is secure as all requests are via HTTPS.
 
-Each Instinctive Notes Account can generate API Keys which are used for authentication.
-
-You should provide the Instinctive Notes API Key in the `Authorization` header with the following structure:
+Every request should add an `Authorization` header with the following structure:
 
 ```
-Token token="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+Token token="API_KEY-SHARD", app="APP_NAME"
 ```
 
-## Identifying your application
+eg
 
-To identify your application, you need to send the User-Agent header. In the event of an issue, this allows us to easily track down your requests and contact you. This should be in the form:
+```
+Token token="adi7ygkjlsdfhgjseoujk-au1", app="spinebone"
+```
 
-`APP_VENDOR_NAME (APP_VENDOR_EMAIL)`
+If the shard or app name is incorrect then a `400 - Bad Request` will be returned.
 
-**APP_VENDOR_NAME** is the name of your application
-
-**APP_VENDOR_EMAIL** is a contact email address for you or your company
-
-**If your application does not contain a User-Agent that contains the name and valid contact details, it may be blocked.**
+If the Api Key is incorrect then a `401 - Unauthorized` will be returned.
 
 ## Errors
 
@@ -108,17 +115,15 @@ General code rules apply:
 At a minumum requests must contain:
 
 - The request `URL`
-- The `Authorization Token` header with the Instinctive Notes API Key
+- The `Authorization Token` header with the Instinctive Notes API Key, shard and app
 - The `Accept` header with `application/json`
-- The `User Agent` header with your details
 
 The following is a curl request for all soap_notes.
 
 ```
 curl https://au1.instinctivenotes.com/api/v2/soap_notes \
-  -H 'Authorization: Token token="API_KEY"' \
+  -H 'Authorization: Token token="API_KEY-SHARD", app="APP_NAME' \
   -H 'Accept: application/json' \
-  -H 'User-Agent: APP_VENDOR_NAME (APP_VENDOR_EMAIL)'
 ```
 
 ## Response data format
