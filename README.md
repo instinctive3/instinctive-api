@@ -20,7 +20,7 @@ The base URL should preceed any endpoint calls made to the API.
 
 The base URL is made up of three components:
 
-- A 3 character shard identifier
+- A 2 character shard identifier
 - The API URL
 - The two character version identifier
 
@@ -33,12 +33,12 @@ https://au1.instinctivenotes.com/api/v2
 
 A shard is an isolated instance of Instinctive Notes. All the data for a practice will be located in a specific shard based on the location of the practice.
 
-Each shard will be represented by one (or more) three character shard identifiers.
+Each shard will be represented by one (or more) two character shard identifiers.
 
 Current shard identifiers are:
 
-- `au1`
-- `nz1`
+- `au`
+- `nz`
 
 If an incorrect shard is used in the URL for an API call to Instinctive Notes the API will respond with a `401` error.
 
@@ -61,9 +61,9 @@ Each practice may have one or more API Keys which provide access to all API endp
 Keys have two components separated by a `-`
 
 - The secret key for the practice
-- The 3 character shard
+- The 2 character shard
 
-Eg: `ABsUn1ggcLazRmRXYXYgQrnc-au1`
+Eg: `ABsUn1ggcLazRmRXYXYgQrnc-au`
 
 The full API Key, including the dash and the shard, should be sent with any request. See the `Authentication` section below for how to send the API Key.
 
@@ -209,15 +209,15 @@ The integer and string `=` and `!=` operators also accepts a list of entries in 
 
 To filter a resource, send a filter string as the q parameter:
 
-`https://au1.instinctivenotes.com/api/v2/soap_notes?q=updated_at:>2019-01-29T11:59:59Z`
+`https://au.instinctivenotes.com/api/v2/soap_notes?q=updated_at:>2019-01-29T11:59:59Z`
 
 To apply multiple filters, send multiple filter strings as an array with the q[] parameter:
 
-`https://au1.instinctivenotes.com/api/v2/soap_notes?q[]=updated_at:>2019-01-29T11:59:59Z&q[]=id:=1,2,3`
+`https://au.instinctivenotes.com/api/v2/soap_notes?q[]=updated_at:>2019-01-29T11:59:59Z&q[]=id:=1,2,3`
 
 The q[] method also works for a single filter string:
 
-`https://au1.instinctivenotes.com/api/v2/soap_notes?q[]=updated_at:>2019-01-29T11:59:59Z`
+`https://au.instinctivenotes.com/api/v2/soap_notes?q[]=updated_at:>2019-01-29T11:59:59Z`
 
 ### Format rules
 

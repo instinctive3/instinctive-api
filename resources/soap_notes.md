@@ -14,7 +14,7 @@
 ### Example Request
 
 ```
-curl https://au1.instinctivenotes.com/api/v2/soap_notes \
+curl https://au.instinctivenotes.com/api/v2/soap_notes \
   -H 'Authorization: Token token="API_KEY-SHARD", app="APP_NAME' \
   -H 'Accept: application/json' \
 ```
@@ -93,7 +93,7 @@ curl https://au1.instinctivenotes.com/api/v2/soap_notes \
 ### Example Request
 
 ```
-curl https://au1.instinctivenotes.com/api/v2/soap_notes/10 \
+curl https://au.instinctivenotes.com/api/v2/soap_notes/10 \
   -H 'Authorization: Token token="API_KEY-SHARD", app="APP_NAME' \
   -H 'Accept: application/json' \
 ```
