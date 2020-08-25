@@ -21,7 +21,7 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes \
 
 ### Example Response
 
-```
+```json
 {
   "soap_notes": [
     {
@@ -42,7 +42,7 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes \
           "sets": 1,
           "times_per_day": 1,
           "times_per_week": 3,
-          "tools": "Foam roller",
+          "tools": "Foam roller"
         },
         {
           "exercise_external_ref": "776655",
@@ -56,7 +56,7 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes \
           "sets": 3,
           "times_per_day": 1,
           "times_per_week": 3,
-          "tools": "",
+          "tools": ""
         }
       ],
       "id": 10,
@@ -65,12 +65,12 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes \
         {
           "name": "Complete Sleeprrr Pillow",
           "product_external_ref": "123456",
-          "product_id": 35,
+          "product_id": 35
         },
         {
           "name": "Flex-Heat Lupin Pack",
           "product_external_ref": "987654",
-          "product_id": 275,
+          "product_id": 275
         }
       ],
       "recommendations": "Get more sleep, Elevate injury, Weight bearing exercise",
@@ -100,7 +100,7 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes/10 \
 
 ### Example Response
 
-```
+```json
 {
   "client_external_ref": "123456",
   "client_id": 50,
@@ -119,7 +119,7 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes/10 \
       "sets": 1,
       "times_per_day": 1,
       "times_per_week": 3,
-      "tools": "Foam roller",
+      "tools": "Foam roller"
     },
     {
       "exercise_external_ref": "776655",
@@ -133,7 +133,7 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes/10 \
       "sets": 3,
       "times_per_day": 1,
       "times_per_week": 3,
-      "tools": "",
+      "tools": ""
     }
   ],
   "id": 10,
@@ -142,12 +142,12 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes/10 \
     {
       "name": "Complete Sleeprrr Pillow",
       "product_external_ref": "123456",
-      "product_id": 35,
+      "product_id": 35
     },
     {
       "name": "Flex-Heat Lupin Pack",
       "product_external_ref": "987654",
-      "product_id": 275,
+      "product_id": 275
     }
   ],
   "recommendations": "Get more sleep, Elevate injury, Weight bearing exercise",
