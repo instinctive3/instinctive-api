@@ -181,6 +181,22 @@ The pagination links will only be included if they are relevant (eg. there will 
 
 Some resources allow the results to be filtered. Filter fields will be documented with the resource where available.
 
+### Boolean Filter Operators
+
+- `=` Equal to
+
+Pass `true` or `false` only
+
+### Date Filter Operators
+
+- `=` Equal to
+- `>=` Greater than or equal to
+- `>` Greater than
+- `<=` Less than or equal to
+- `<` Less than
+
+Dates must be in YYYY-MM-DD format.
+
 ### DateTime Filter Operators
 
 - `>=` Greater than or equal to
@@ -241,6 +257,7 @@ Webhooks can remove the need to poll Instinctive Notes for up to date informatio
 
 ## API Resources
 
+- [Schedules](/resources/schedules.md)
 - [SOAP Notes](/resources/soap_notes.md)
 
 ## Questions
