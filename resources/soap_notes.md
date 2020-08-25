@@ -63,17 +63,28 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes \
       "name": "Standard Treatment",
       "product_prescriptions": [
         {
+          "external_ref": "123456",
+          "id": 35,
           "name": "Complete Sleeprrr Pillow",
-          "product_external_ref": "123456",
-          "product_id": 35
+          "note": ""
         },
         {
+          "external_ref": "987654",
+          "id": 275,
           "name": "Flex-Heat Lupin Pack",
-          "product_external_ref": "987654",
-          "product_id": 275
+          "note": "To be applied to lower back"
         }
       ],
-      "recommendations": "Get more sleep, Elevate injury, Weight bearing exercise",
+      "recommendations": [
+        {
+          "name": "Get more sleep",
+          "note": "In bed before 10pm, average 8 hours per night"
+        },
+        {
+          "name": "Walk",
+          "note": ""
+        }
+      ],
       "seen_at": "2018-03-26T14:15:00Z",
       "state": "final",
       "updated_at": "2018-03-26T14:18:00Z",
@@ -140,17 +151,28 @@ curl https://au.instinctivenotes.com/api/v2/soap_notes/10 \
   "name": "Standard Treatment",
   "product_prescriptions": [
     {
+      "external_ref": "123456",
+      "id": 35,
       "name": "Complete Sleeprrr Pillow",
-      "product_external_ref": "123456",
-      "product_id": 35
+      "note": ""
     },
     {
+      "external_ref": "987654",
+      "id": 275,
       "name": "Flex-Heat Lupin Pack",
-      "product_external_ref": "987654",
-      "product_id": 275
+      "note": "To be applied to lower back"
     }
   ],
-  "recommendations": "Get more sleep, Elevate injury, Weight bearing exercise",
+  "recommendations": [
+    {
+      "name": "Get more sleep",
+      "note": "In bed before 10pm, average 8 hours per night"
+    },
+    {
+      "name": "Walk",
+      "note": ""
+    }
+  ],
   "seen_at": "2018-03-26T14:15:00Z",
   "state": "final",
   "updated_at": "2018-03-26T14:18:00Z",
