@@ -24,6 +24,20 @@ The webhook capabilities of Instinctive Notes are only available to accounts on 
 
 You are able to set up and test webhooks on our Standard Plan but setting a webhook to active requries and upgrade to Premium.
 
+## Supported event types
+
+Instinctive Notes currently supports the following webhooks:
+
+- `schedule.created`
+- `schedule.updated`
+- `soap_note.created`
+- `soap_note.updated`
+
+## Supported Resources
+
+- [Schedules](/resources/schedules.md#get-schedule)
+- [SOAP Notes](/resources/soap_notes.md#get-soap-note)
+
 ## Build a webhook endpoint
 
 The first step to adding webhooks to your Instinctive Notes integration is to build your own custom endpoint.
@@ -52,7 +66,7 @@ All new endpoints default to `Inactive` status to allow time to build and test y
 
 ### Test that your endpoint works
 
-As your webhook endpoint is used asynchronously, its failures may not be obvious to you until it’s too late (e.g., after it’s been disabled). Always test that your endpoint works:
+As your webhook endpoint is used asynchronously, its failures may not be obvious to you until it’s too late (e.g., after it’s been disabled by us). Always test that your endpoint works:
 
 - Upon initial creation
 - After taking it live
@@ -60,7 +74,7 @@ As your webhook endpoint is used asynchronously, its failures may not be obvious
 
 You can send test webhooks to your endpoint from the Instinctive Notes Web App under `Settings >> Change developers settings` using the `Send test` link.
 
-You can select any event type to send, even if the endpoint is not currently subscribed to that event type. Instinctive Notes will send an event of that type to your endpoint using the last saved document of that type.
+You can select any event type to send, even if the endpoint is not currently subscribed to that event type. Instinctive Notes will send an event of that type to your endpoint using the last saved record of that type.
 
 For example, if you choose `soap_note.created` then the last soap note created in your account will be sent as a webhook.
 
@@ -70,81 +84,27 @@ A webhook response is in `JSON`. The `data: object:` key will include the specif
 
 The object record will be the same as the singular response in the section for that specific data type.
 
-Here is an example response for a soap note.
+Here is an example response for a schedule.
 
 ```
 {
   "created_at": "2018-03-26T14:20:00Z",
   "data": {
     "object": {
+      "actual_count": 2,
       "client_external_ref": "123456",
       "client_id": 50,
-      "created_at": "2018-03-26T14:18:00Z",
-      "created_by": "Simon Jones",
-      "exercise_prescriptions": [
-        {
-          "exercise_external_ref": "444555",
-          "exercise_id": 33,
-          "hold_for": "20 seconds",
-          "id": 1735,
-          "instructions": "No bouncing",
-          "name": "Stretch - Hip Flexor",
-          "reps": 1,
-          "rest_time": "20 seconds",
-          "sets": 1,
-          "times_per_day": 1,
-          "times_per_week": 3,
-          "tools": "Foam roller",
-        },
-        {
-          "exercise_external_ref": "776655",
-          "exercise_id": 75,
-          "hold_for": "2 seconds",
-          "id": 1973,
-          "instructions": "",
-          "name": "Chin ups",
-          "reps": 5,
-          "rest_time": "20 seconds",
-          "sets": 3,
-          "times_per_day": 1,
-          "times_per_week": 3,
-          "tools": "",
-        }
-      ],
       "id": 10,
-      "name": "Standard Treatment",
-      "product_prescriptions": [
-        {
-          "name": "Complete Sleeprrr Pillow",
-          "product_external_ref": "123456",
-          "product_id": 35,
-        },
-        {
-          "name": "Flex-Heat Lupin Pack",
-          "product_external_ref": "987654",
-          "product_id": 275,
-        }
-      ],
-      "recommendations": "Get more sleep, Elevate injury, Weight bearing exercise",
-      "seen_at": "2018-03-26T14:15:00Z",
-      "state": "final",
-      "updated_at": "2018-03-26T14:18:00Z",
+      "planned_count": 2,
+      "review": true,
+      "scheduled_on": "2020-06-01",
+      "user_id": 5,
+      "user_external_ref": "98765"
     },
   },
-  "type": "soap_note.created"
+  "type": "schedule.created"
 }
 ```
-
-## Supported event types
-
-Instinctive Notes currently supports the following webhooks:
-
-- `soap_note.created`
-- `soap_note.updated`
-
-## Supported Resources
-
-- [SOAP Notes](/resources/soap_notes.md#get-soap-note)
 
 ## Best practices for using webhooks
 
